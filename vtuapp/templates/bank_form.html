@@ -1,0 +1,91 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% load static %} {% load humanize %} {% block title %}BankPayment|legitdata{% endblock %} {% block content %}
+
+<link rel="stylesheet" href="{% static 'ogbam/form.css' %}">
+
+<div style="padding:90px 15px 20px 15px" >
+
+
+    <h2 class="w3-center">BankPayment  (minimum amount is ₦{{config.manual_bank_funding_limit}})</h2>
+
+    <div class="box w3-card-4">
+
+        <form method='post'>
+
+
+            <div class="row">
+
+                <div class="col-sm-8">
+
+                    {% csrf_token %} {% include 'baseform.html' %}
+
+<br><font color="red">
+                     <p>{{config.manual_bank_funding_info_message|linebreaks}}</font>
+                    <br>
+                    <button type="submit" value="Continue to Funding" class=" btn" style='margin-bottom:15px;'>Submit</button>
+
+                </div>
+                <div class="col-sm-4  ">
+
+{% if banks %}
+
+{% for bank in banks %}
+ <p style="font-size:18px;font-weight:bolder">
+  {{bank.bank_name}} <br>
+  {{bank.account_name}}<br>
+ {{bank.account_number}}<br>
+ 
+{% endfor %}
+
+{% endif %}
+                    {% if form.non_field_errors %} {% for errormessage in form.non_field_errors %}
+
+                    <div class=' alert alert-danger' style='padding:25px 10px;margin:0 0 20px; '>
+                        {{errormessage}}</div>
+                    {% endfor %}
+
+
+
+                </div>
+                {% endif %}
+             
+              <p>
+
+                      <br>
+                    You can deposit or transfer fund into our  account stated above. Use your registered username as depositor's name, naration or remarks 
+Your account will be funded as soon as your payment is confirmed.
+                    <br>
+                    
+                    </div>
+                </p>
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+
+<script>
+$(function(){
+  $('#id_payment_time').datetimepicker({
+      format: 'DD/MM/YYYY HH:mm'
+  });
+  
+});
+</script>
+
+
+
+{% endblock %}

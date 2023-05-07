@@ -10,17 +10,17 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
 lib/
 lib64/
 parts/
-sdist/
+# sdist/
 var/
 wheels/
 share/python-wheels/
+media/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -122,6 +122,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+.vscode
 env/
 venv/
 ENV/

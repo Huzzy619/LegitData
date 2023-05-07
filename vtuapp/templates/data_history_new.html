@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}{% load humanize %} {% load crispy_forms_tags %}
+
+  {% block title %}
+<title> Admin - Dashboard </title>
+			{% endblock title %}
+
+
+{% block style %}
+
+
+{% endblock%}
+
+{% block content %}
+
+                    <div class="container-fluid" style="margin-top:30px;">
+
+<div class="card mb-20">
+                                <div class="card-body" style="margin-top:30px;">
+                                   {% if transactions %}
+
+
+                                        <h1 class="card-title mb-2"> DATA TRANSACTIONS</h1>
+
+                                          <div class="row pb-2">
+                                      <div class="col-md-3 pb-4">
+                                      <form method="GET">
+                                        <div class="input-group ">
+                                                <input type="text" class="form-control"  name= "q" placeholder="" aria-label="Recipient's username" {% if search %} value="{{search}}" {% endif%} required>
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-dark  " type="submit">Search</button>
+                                                </div>
+                                            </div>
+
+                                            </form>
+                                            </div>
+
+                                            <div class="col-md-6 ">
+                                                <a href="/Data_History_new" class="btn btn-primary  " >Refresh</a>
+                                            </div>
+
+
+
+
+                                      
+                                             </div>
+
+
+
+                                    <div class="table-responsive">
+                                        <table id="" class="table table-striped  w-100">
+                                            <thead>
+                                             
+                                                
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Plan</th>
+                                                    <th>Plan amount</th>
+                                                    <th>Number</th>
+                                                    <th>Date</th>
+                                                    <th>Status</th>
+                                                    <th>API RESPONSE</th> 
+                                                    <th>Action</th>
+                                                     
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for transaction in transactions %}
+                                                <tr>
+
+
+                                                    
+                                                    <td class="txt-14">{{ transaction.ident}}</td>
+                                                    <td class="txt-14">{{transaction.plan.plan_size}}{{dat.plan.plan_Volume}}</td>
+                                                    <td class="txt-14">₦{{transaction.plan.plan_amount}}</td>
+                                                    <td class="txt-14">{{transaction.mobile_number}}</td>
+                                                    <td class="txt-14">{{transaction.create_date}}</td>
+                                                    <td>
+                                                        <span class="badge {% if transaction.Status == 'successful'%} badge-soft-success {% elif transaction.Status == 'processing'%} badge-soft-primary {% else %} badge-soft-danger {% endif%}">
+                                                              {{transaction.Status}}
+                                                        </span>
+                                                    </td>
+                                                    <td class="txt-14">{{transaction.api_response}}</td> 
+                                                    <td > <a href="/Data_success/{{transaction.id}}/" class="btn btn-secondary text-white">View</button> </td>
+
+                                                  
+                                                    
+
+
+                                                </tr>
+                                                {% endfor %}
+
+                                            </tbody>
+                                        </table>
+
+                                         {% if transactions.has_other_pages %}
+
+                                        <div class="d-flex justify-content-between align-items-center mb-20">
+                                        <div></div>
+                                         <nav>
+                                        <ul class="pagination singel-page flex-wrap">
+
+                                           {% if transactions.has_previous %}
+                                            <li class="page-item"><a class="page-link" href="?page={{ transactions.previous_page_number }}{%if search%}&q={{search}} {% endif%}"><i class="fa fa-angle-left"></i></a></li>
+
+
+
+                                        {% endif %}
+
+                                          {% for i in transactions.paginator.page_range %}
+                                            {% if transactions.number == i %}
+                                            <li class="page-item active"><a class="page-link" href="#">{{ i }} </a></li>
+
+                                            {% else %}
+
+                                                <li class="page-item"><a class="page-link" href="?page={{ i }}{%if search%}&q={{search}} {% endif%}">{{ i }}</a></li>
+                                            {% endif %}
+
+                                            {% endfor %}
+
+                                                {% if transactions.has_next %}
+
+                                                    <li class="page-item"><a class="page-link" href="?page={{ transactions.next_page_number }}{%if search%}&q={{search}} {% endif%}"><i class="fa fa-angle-right"></i></a></li>
+
+                                                {% endif %}
+
+                                                                                </ul>
+                                    </nav>                                    </div>
+                                    {% endif %}
+
+
+                                    </div>
+                                    {% else%}
+                                    <center>
+                                      <h6 class="card-title">No Records / {{user.username}} Has Not Perform Any Transaction</h6>
+                                      <!--<h6 class="card-title">{{customer.username}} has not perform any transaction</h6>-->
+                                      <!--<img src="/static/empty.png" style="height:300px">-->
+                                      </center>
+
+                                     {% endif%}
+                                </div>
+                            </div>
+
+
+
+
+
+                    </div>
+
+
+
+{% endblock%}
+
+{% block javascript %}
+
+
+{% endblock%}

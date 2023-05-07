@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}FAQ {% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'ogbam/w3.css' %}">
+<link rel="stylesheet" href="{% static 'ogbam/ogbams.css' %}">
+
+<div class='w3-container ' style="padding-top:90px">
+    <div class='card'>
+        <div class='w3-center w3-text-brown '>
+            <a href='#air'>
+                <h2>FAQs.</h2>
+            </a>
+    
+            <h5>Click on each question to see answers,click again to hide it.</h5>
+        </div>
+        
+        <ul class="w3-ul">
+            {% for each in question %}
+                <li>
+                    <p style="cursor:pointer" onclick="myFunction1('demo{{each.id}}')"><b>{{each.question}}</b> </p>
+                    <div id="demo{{each.id}}" style="display:none">
+        
+                        <div class="w3-row w3-margin-bottom">
+        
+                            <div class="w3-panel">
+                                <p>{{each.answer|linebreaks}}.</p>
+                            </div>
+                        </div>
+        
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <hr>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    // Toggle between hiding and showing faq details
+    document.getElementById("myBtn").click();
+
+    function myFunction1(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+</script>
+
+
+
+{% endblock %}

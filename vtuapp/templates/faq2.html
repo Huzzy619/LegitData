@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}FAQ {% endblock %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+{% block content %}
+
+<div class='w3-container ' style="padding-top:90px">
+
+    <div class='card'>
+        <div class='w3-container w3-center'>
+            <h1 class="w3-xxlarge w3-text-green"><b>Retailer's Website.</b></h1>
+
+            <p>To order for a retailer website, <a class="w3-btn w3-blue w3-border w3-round-large" href="{%url 'topuser'%}">Click Here</a></p>
+
+            <p style="font-size:14px;">Have you ever thought of having a website like legitdata? Do you wish to have an online business that constantly generate money for you legitimately? Are you thinking of becoming the owner of a business? Why not tlegitdata Retailership? As a retaillegitdataloconnect, you can get a webslegitdataspiloconnect and market all our products and services. You will stand a chance to reach out to many people and retail all our services at discounted prices on your Retailership website to enhance your sells.
+                <br> If interested, check the frequently asked questions listed below.
+            </p>
+            <p>Click on each question to see answers</p>
+        </div>
+
+
+        <ul class="w3-ul ">
+            {% for each in question %}
+                <li>
+                    <p style="cursor:pointer" onclick="faqfunction('demo{{each.id}}')"><b>{{each.question}} &nbsp;</b>  </p>
+    
+                    <div id="demo{{each.id}}" style="display:none">
+                        <div class="w3-row w3-margin-bottom">
+                            <div class="w3-panel">
+                                <p>{{each.answer|safe}}.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        
+        <hr>
+        <center>
+            <p>If you have any other enquiry, please contact us via support@legitdata.com.ng/p>
+            <p>To order for a retailer website, <a class="w3-btn w3-blue w3-border w3-round-large" href="{%url 'topuser'%}">Click Here</a> </p>
+        </center>
+    </div>
+
+</div>
+
+
+
+<script>
+    // Toggle between hiding and showing faq details
+    document.getElementById("myBtn").click();
+
+    function faqfunction(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+</script>
+
+
+
+{% endblock %}

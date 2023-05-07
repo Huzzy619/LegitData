@@ -1,0 +1,414 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% load static %} {% load humanize %} {% block title %}Edit profile|Mabrooktelecoms{% endblock %} {% block content %}
+
+<link rel="stylesheet" href="{% static 'ogbam/form.css' %}">
+
+<div style="padding:90px 15px 20px 15px" >
+
+
+
+<div class="page-inner">
+		<h4 class="page-title">SELF SERVICE</h4>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card card-space">
+						<div class="card-header">
+							<h4 class="card-title">Select Transaction to Requery</h4>
+						</div>
+						<div class="card-body">
+							<div class="row">
+								<div class="col-12 col-md-3 order-2 order-lg-1">
+									<div class="nav flex-column nav-pills nav-secondary nav-pills-no-bd nav-pills-icons" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+										<a class="nav-link active show" id="v-pills-home-tab-icons" data-toggle="pill" href="#v-pills-home-icons" role="tab" aria-controls="v-pills-home-icons" aria-selected="true">
+											<i class="icon-phone"></i>
+											Airtime Transaction
+										</a>
+										<a class="nav-link" id="v-pills-profile-tab-icons" data-toggle="pill" href="#v-pills-profile-icons" role="tab" aria-controls="v-pills-profile-icons" aria-selected="false">
+											<i class="flaticon-user-4"></i>
+											Bill Transaction
+										</a>
+										<a class="nav-link" id="v-pills-buy-tab-icons" data-toggle="pill" href="#v-pills-buy-icons" role="tab" aria-controls="v-pills-buy-icons" aria-selected="false">
+											<i class="flaticon-cart"></i>
+											Cable Transaction
+										</a>
+										<a class="nav-link" id="v-pills-quality-tab-icons" data-toggle="pill" href="#v-pills-quality-icons" role="tab" aria-controls="v-pills-quality-icons" aria-selected="false">
+											<i class="flaticon-wifi"></i>
+											Data Transaction
+										</a>
+									</div>
+								</div>
+								<div class="col-12 col-md-9 order-1 order-lg-2">
+									<div class="tab-content" id="v-pills-tabContent">
+									    
+										<div class="tab-pane fade active show" id="v-pills-home-icons" role="tabpanel" aria-labelledby="v-pills-home-tab-icons">
+											<h5 class="mt-3">How To check <b>AIRTIME</b> order status </h5>
+											<hr />
+											
+											<p>
+											    <b>Step 1:</b> 
+											    Copy your order ID, which can be found on the reciept issued to you after purcharse, you can also <a href="/history/#airtime">click here</a> to find your order ID.
+											</p>
+											
+											<p>
+											    <b>Step 2:</b> 
+											    Paste the ID in the input box below, and click submit.
+											</p>
+
+											<div class="">
+    											<div class="form-group">
+    												<div class="input-icon">
+    													<span class="input-icon-addon">
+    														<i class="fas fa-barcode"></i>
+    													</span>
+    													<input type="text" class="form-control" placeholder="Enter Airtime TopUp ID" id="airtime">
+    												</div>
+    											</div>
+    											
+    											<button class="btn btn-primary btn-round" id="airtime_btn">submit</button>
+											</div>
+									    </div>
+									
+										<div class="tab-pane fade" id="v-pills-profile-icons" role="tabpanel" aria-labelledby="v-pills-profile-tab-icons">
+											<h5 class="mt-3">How To check <b>BILL PAYMENT</b> order status </h5>
+											<hr />
+											
+											<p>
+											    <b>Step 1:</b> 
+											    Copy your order ID, which can be found on the reciept issued to you after purcharse, you can also <a href="/history/#bill">click here</a> to find your order ID.
+											</p>
+											
+											<p>
+											    <b>Step 2:</b> 
+											    Paste the ID in the input box below, and click submit.
+											</p>
+
+											<br>
+
+											<div class="">
+    											<div class="form-group">
+    												<div class="input-icon">
+    													<span class="input-icon-addon">
+    														<i class="fas fa-barcode"></i>
+    													</span>
+    													<input type="text" class="form-control" placeholder="Enter Bill Payment ID" id="bill">
+    												</div>
+    											</div>
+    											
+    											<button class="btn btn-primary btn-round" id="bill_btn">submit</button>
+											</div>
+										</div>
+										
+										<div class="tab-pane fade" id="v-pills-buy-icons" role="tabpanel" aria-labelledby="v-pills-buy-tab-icons">
+											<h5 class="mt-3">How To check <b>CABLE SUBSCRIPTION</b> order status </h5>
+											<hr />
+											
+											<p>
+											    <b>Step 1:</b> 
+											    Copy your order ID, which can be found on the reciept issued to you after purcharse, you can also <a href="/history/#Cablesub">click here</a> to find your order ID.
+											</p>
+											
+											<p>
+											    <b>Step 2:</b> 
+											    Paste the ID in the input box below, and click submit.
+											</p>
+
+											<div class="">
+    											<div class="form-group">
+    												<div class="input-icon">
+    													<span class="input-icon-addon">
+    														<i class="fas fa-barcode"></i>
+    													</span>
+    													<input type="text" class="form-control" placeholder="Enter Cable Subscription ID" id="cable">
+    												</div>
+    											</div>
+    											
+    											<button class="btn btn-primary btn-round" id="cable_btn">submit</button>
+											</div>
+										</div>
+										
+										<div class="tab-pane fade" id="v-pills-quality-icons" role="tabpanel" aria-labelledby="v-pills-quality-tab-icons">
+										<h5 class="mt-3">How To check <b>DATA</b> order status </h5>
+											<hr />
+											
+											<p>
+											    <b>Step 1:</b> 
+											    Copy your order ID, which can be found on the reciept issued to you after purcharse, you can also <a href="/history/#data">click here</a> to find your order ID.
+											</p>
+											
+											<p>
+											    <b>Step 2:</b> 
+											    Paste the ID in the input box below, and click submit.
+											</p>
+
+											<div class="">
+    											<div class="form-group">
+    												<div class="input-icon">
+    													<span class="input-icon-addon">
+    														<i class="fas fa-barcode"></i>
+    													</span>
+    													<input type="text" class="form-control" placeholder="Enter Data Transaction ID" id="data">
+    												</div>
+    											</div>
+    											
+    											<button class="btn btn-primary btn-round" id="data_btn">submit</button>
+											</div>
+									    </div>
+								</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-footer">
+
+				</div>
+			</div>
+		    </div>
+        </div>
+</div>
+
+
+
+<script>
+    
+    $("#airtime_btn").click(function() {
+        var referenceID = $("#airtime").val();
+    
+        if(referenceID == ""){
+            alert("This field cannot be empty");
+        }
+        else {
+            $.ajax({
+                url: '/self-service/',
+                type: 'GET',
+                data: {
+                    "type":"airtime",
+                    "ref":referenceID,
+                },
+                beforeSend: function() {
+                    $.LoadingOverlay("show");
+                },
+                success: function(data) {
+                    console.log(data);
+                    
+                    if(data.valid == false){
+                        alert(data.message)
+                    }else{
+                        swal({
+                            title: "Successful!",
+                            text: data.message,
+                            icon: "success",
+                            button: "View reciept",
+                        })
+                        
+                        $('.swal-button--confirm').click(function() {
+                            $.ajax({
+                                beforeSend: function() {
+                                    $.LoadingOverlay("show");
+                                },
+                                success: window.location.href = '/AirtimeTopup_success/' + String(data.id)
+                            });
+                        });
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    $.LoadingOverlay("hide");
+                    console.log(errorThrown)
+
+                    if (String(JSON.parse(XMLHttpRequest.status)) == 500) {
+                        swal("Oops!", "Something went wrong please contact admin ", "error")
+                    } else if (JSON.parse(XMLHttpRequest.responseText).error) {
+                        swal("Oops!", String(JSON.parse(XMLHttpRequest.responseText).error), "error")
+                    } else {
+                        swal("Oops!", String(XMLHttpRequest.responseText), "error")
+                    }
+                },
+                complete: function() {
+                    $.LoadingOverlay("hide")
+                }
+            });
+        }
+    });
+    
+    
+    $("#bill_btn").click(function() {
+        var referenceID = $("#bill").val();
+    
+        if(referenceID == ""){
+            alert("This field cannot be empty");
+        }
+        else {
+            $.ajax({
+                url: '/self-service/',
+                type: 'GET',
+                data: {
+                    "type":"bill",
+                    "ref":referenceID,
+                },
+                beforeSend: function() {
+                    $.LoadingOverlay("show");
+                },
+                success: function(data) {
+                    console.log(data);
+                    
+                    if(data.valid == false){
+                        alert(data.message)
+                    }else{
+                        swal({
+                            title: "Successful!",
+                            text: data.message,
+                            icon: "success",
+                            button: "View reciept",
+                        })
+                        $('.swal-button--confirm').click(function(){
+                              $.ajax({
+                                    beforeSend: function(){
+                                        $.LoadingOverlay("show");
+                                    },
+                                    success: window.location.href = '/bill_success/'+String(data.id)
+                              });
+                        });
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    $.LoadingOverlay("hide");
+                    console.log(errorThrown)
+
+                    if (String(JSON.parse(XMLHttpRequest.status)) == 500) {
+                        swal("Oops!", "Something went wrong please contact admin ", "error")
+                    } else if (JSON.parse(XMLHttpRequest.responseText).error) {
+                        swal("Oops!", String(JSON.parse(XMLHttpRequest.responseText).error), "error")
+                    } else {
+                        swal("Oops!", String(XMLHttpRequest.responseText), "error")
+                    }
+                },
+                complete: function() {
+                    $.LoadingOverlay("hide")
+                }
+            });
+        }
+    });
+    
+    
+    $("#cable_btn").click(function() {
+        var referenceID = $("#cable").val();
+    
+        if(referenceID == ""){
+            alert("This field cannot be empty");
+        }
+        else {
+            $.ajax({
+                url: '/self-service/',
+                type: 'GET',
+                data: {
+                    "type":"cable",
+                    "ref":referenceID,
+                },
+                beforeSend: function() {
+                    $.LoadingOverlay("show");
+                },
+                success: function(data) {
+                    console.log(data);
+                    
+                    if(data.valid == false){
+                        alert(data.message)
+                    }else{
+                        swal({
+                            title: "Successful!",
+                            text: data.message,
+                            icon: "success",
+                            button: "View reciept",
+                        })
+                        
+                        $('.swal-button--confirm').click(function(){
+                              $.ajax({
+                                    beforeSend: function(){
+                                        $.LoadingOverlay("show");
+                                    },
+                                    success: window.location.href = '/Cablesub_success/' + String(data.id)
+                              });
+                        });
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    $.LoadingOverlay("hide");
+                    console.log(errorThrown)
+
+                    if (String(JSON.parse(XMLHttpRequest.status)) == 500) {
+                        swal("Oops!", "Something went wrong please contact admin ", "error")
+                    } else if (JSON.parse(XMLHttpRequest.responseText).error) {
+                        swal("Oops!", String(JSON.parse(XMLHttpRequest.responseText).error), "error")
+                    } else {
+                        swal("Oops!", String(XMLHttpRequest.responseText), "error")
+                    }
+                },
+                complete: function() {
+                    $.LoadingOverlay("hide")
+                }
+            });
+        }
+    });
+    
+    
+    $("#data_btn").click(function() {
+        var referenceID = $("#data").val();
+    
+        if(referenceID == ""){
+            alert("This field cannot be empty");
+        }
+        else {
+            $.ajax({
+                url: '/self-service/',
+                type: 'GET',
+                data: {
+                    "type":"data",
+                    "ref":referenceID,
+                },
+                beforeSend: function() {
+                    $.LoadingOverlay("show");
+                },
+                success: function(data) {
+                    console.log(data);
+                    
+                    if(data.valid == false){
+                        alert(data.message)
+                    }else{
+                        swal({
+                            title: "Successful!",
+                            text: data.message,
+                            icon: "success",
+                            button: "View reciept",
+                        })
+                        
+                        $('.swal-button--confirm').click(function() {
+                            $.ajax({
+                                beforeSend: function() {
+                                    $.LoadingOverlay("show");
+                                },
+                                success: window.location.href = '/Data_success/' + String(data.id)
+                            });
+                        });
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    $.LoadingOverlay("hide");
+                    console.log(errorThrown)
+
+                    if (String(JSON.parse(XMLHttpRequest.status)) == 500) {
+                        swal("Oops!", "Something went wrong please contact admin ", "error")
+                    } else if (JSON.parse(XMLHttpRequest.responseText).error) {
+                        swal("Oops!", String(JSON.parse(XMLHttpRequest.responseText).error), "error")
+                    } else {
+                        swal("Oops!", String(XMLHttpRequest.responseText), "error")
+                    }
+                },
+                complete: function() {
+                    $.LoadingOverlay("hide")
+                }
+            });
+        }
+    });
+    
+    
+</script>
+
+
+{% endblock %}

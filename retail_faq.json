@@ -1,0 +1,146 @@
+[
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 1,
+        "fields": {
+            "question": "What's the retailers website all about?",
+            "answer": "legitdata designs websites for her retailers. \r\n\r\nThis website offers all the various products and services offered on legitdata. \r\nThe website uses the same software that powers legitdata but different homepage. legitdata handles all the technicalities, while retailers can focus on making money."
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 2,
+        "fields": {
+            "question": "Do I have to send orders made on my website to legitdata?",
+            "answer": "No, you don't have to, \r\nlegitdata retailers websites are connected directly to legitdata in such a way that all orders made on retailers websites are automatically sent to legitdata in the name of the owner of the website"
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 3,
+        "fields": {
+            "question": "Who handles the customer service?",
+            "answer": "The owner of the retailer website handles the customer service. \r\nThe retailer will update his/her phone number for clients to contact him directly"
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 4,
+        "fields": {
+            "question": "Are there discounts for retailers?",
+            "answer": "Yes, though our rates on legitdata is already at wholesales, but we also give discounts for our retailers, so retailers can add intended profit. \r\n\r\nFor instance, If a product for our retailer costs #295 such can be sold by retailers at #330 or more on his website"
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 5,
+        "fields": {
+            "question": "Can I know the prices for each products?",
+            "answer": "We have many products naming each products will take a bit of time but I guarantee you will like our retailer prices such as MTN 1GB is 295 and glo 2gb is 900. \r\n\r\nPlease note that these prices are subjected to change at any time, the increament in price will be rear to to the reduction in price, as we are working tirelessly for you to get it cheaper"
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 6,
+        "fields": {
+            "question": "Will I be able to set my prices, bank account details and other informations?",
+            "answer": "Yes. You can set all that."
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 7,
+        "fields": {
+            "question": "Is wallet funding also automated on Retailers website ?",
+            "answer": "Retailers website support both manual and automated funding. If your clients pay you through payment gateway it is automated but if they pay into your bank account you credit their wallet manually. This doesn't take time and it's easy to do."
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 8,
+        "fields": {
+            "question": "Can I control this website my myself?",
+            "answer": "Sure, our easy step by step manual guide will guide you through the process, it is simple as ABC."
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 9,
+        "fields": {
+            "question": "Can I manage the website with my phone?",
+            "answer": "In as much your phone can access the internet, you can manage your website with it."
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 10,
+        "fields": {
+            "question": "Does the package include Mobile App?",
+            "answer": "No. We do not have Mobile App for retailer websites. But if you insist to have one it will cost you additional #30,000"
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 11,
+        "fields": {
+            "question": "How much do I need to get started?",
+            "answer": "You can start with any amount. After getting your retailer's website at #45,000 ; you can start with a capital of #5,000 to #45,000"
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 12,
+        "fields": {
+            "question": "How sure am I that I will get good ROI on my investment?",
+            "answer": "Of course, legitdata services are what people use everyday, in as much you have members registered on your site, you will forever make money on such site"
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 13,
+        "fields": {
+            "question": "How long will it take for the website to be ready?",
+            "answer": "It takes 7days after your payment. You don't have to contact us, we shall contact you immediately your website is ready."
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 14,
+        "fields": {
+            "question": "How much can I make on such website?",
+            "answer": "Your profit is totally dependent on you. It is indefinite. The number of sales you make determines your profit."
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 15,
+        "fields": {
+            "question": "Can I view orders made from my website?",
+            "answer": "Yes, the record and status of all orders made on retailer's website can be viewed by the admin of the website."
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 16,
+        "fields": {
+            "question": "How do I get started?",
+            "answer": "Get yourself a good domain name. You need to ensure the domain name is available; to do this, download an application on playstore called DOMAIN NAME SEARCH. After getting an available domain name, Fund your legitdata wallet with the required amount. To order for your retailer website, contact admin or click on the WHATSAPP icon on the left bottom on our page"
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 17,
+        "fields": {
+            "question": "So, how much does it cost to get a retailer website and what do I need to provide?",
+            "answer": "Getting a retailer website only costs #15,000 + #5000 for SSL security making #45,000 with annual due of #15,000 for domain name, ssl security renewal and website maintenance. Meaning that, you pay #45,000 for the domain name, web design, hosting and ssl security for the first year and #15,000 for subsequent years."
+        }
+    },
+    {
+        "model": "vtuapp.retailwebfrequentlyaskedquestion",
+        "pk": 18,
+        "fields": {
+            "question": "Is SSL Security compulsory for my Retailer's website?",
+            "answer": "Yes, it costs #5000 only. Contact support@legitdata.com.ngto confirm actual price."
+        }
+    }
+]

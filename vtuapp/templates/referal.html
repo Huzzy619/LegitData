@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}referal| legitdata.com.ng% endblock %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'ogbam/w3.css' %}">
+<link rel="stylesheet" href="{% static 'ogbam/ogbams.css' %}">
+
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+
+<div class='w3-container ' style="padding-top:90px">
+    
+    {% comment %}
+    <div class='card p-4'>
+        <div class='w3-center w3-text-brown '>
+            <a href='#'>
+                <h2>Referral Contest chart Table for {% now "F Y" %}</h2>
+            </a>
+        </div>
+        
+        <div class="table-responsive">
+            <table class='table table-bordered table-striped' id="refTable">
+            <thead>
+				<tr>
+                    <th>Username</th> 
+                    <th>Referral Username</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Date Joined</th>
+                    <th>Bonus Earned</th>
+                </tr>
+			</thead>
+			<tfoot>
+				<tr>
+                    <th>Username</th>
+                    <th>Referral Username</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Date Joined</th>
+                    <th>Bonus Earned</th>
+                </tr>
+			</tfoot>
+			
+			<tbody>
+                {% if referal %}
+                    
+                    {% for ref in month_leader_board %}
+                    <tr>
+                        <td>{{ref.user.username}}</td>
+                        <td>{{ref.referal_user.username}}</td>
+                        <td>{{ref.referal_user.email}}</td>
+                        <td>{{ref.referal_user.Phone}}</td>
+                        <td>{{ref.referal_user.date_joined}}</td>
+                        <td>N{{ref.referal_user.Referer_Bonus}}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                  You have not refer any body
+                {% endif %}
+            </tbody>
+        </table>
+        </div>
+
+    </div>
+    
+    <br><br>
+    {% endcomment %}
+     
+    <div class='card p-4'>
+        <div class='w3-center w3-text-brown '>
+            <a href='#'>
+                <h2>My Referals.</h2>
+            </a>
+    
+            <h5>you have refered {{referal_total}} users so far.</h5>
+        </div>
+        
+        <div class="table-responsive">
+            <table class='table table-bordered table-striped' id="myTable">
+            <thead>
+				<tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Date Joined</th>
+                    <th>Bonus Earned</th>
+                </tr>
+			</thead>
+			<tfoot>
+				<tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Date Joined</th>
+                    <th>Bonus Earned</th>
+                </tr>
+			</tfoot>
+			
+			<tbody>
+                {% if referal %}
+                    
+                    
+                    {% for ref in referal %}
+                    <tr>
+                        <td>{{ref.username}}</td>
+                        <td>{{ref.referal_user.email}}</td>
+                        <td>{{ref.referal_user.Phone}}</td>
+                        <td>{{ref.referal_user.date_joined}}</td>
+                        <td>N{{ref.referal_user.Referer_Bonus}}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                  You have not refer any body
+                {% endif %}
+            </tbody>
+        </table>
+        </div>
+        
+    </div>
+    
+    
+    
+</div>
+
+
+
+<script>
+	$(document).ready(function() {
+		$('#myTable').DataTable({
+		    responsive: true
+		});
+		
+		$('#refTable').DataTable({
+		    responsive: true
+		});
+
+	});
+</script>
+
+{% endblock %}
