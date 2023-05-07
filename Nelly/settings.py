@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     "core",
     "vtuapp",
     "nelly_api",
-
     "django.contrib.admin",
     "django.contrib.auth",
     "notifications",
@@ -43,8 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
-    "django.contrib.humanize", 
-
+    "django.contrib.humanize",
     "rest_framework",
     "rest_framework.authtoken",
     "allauth",
@@ -58,9 +56,8 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap4",
     "bootstrapform",
-     'django_otp',
-    'django_otp.plugins.otp_totp',
-
+    "django_otp",
+    "django_otp.plugins.otp_totp",
 ]
 
 MIDDLEWARE = [
@@ -69,7 +66,7 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
-    'django_otp.middleware.OTPMiddleware',
+    "django_otp.middleware.OTPMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
@@ -87,6 +84,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "vtuapp.context_processors.categories_processor",
+
             ],
         },
     },
