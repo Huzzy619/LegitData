@@ -3,13 +3,14 @@ import hashlib
 import hmac
 import json
 import random
+from typing import Any
 import urllib.parse
 import uuid
 from datetime import datetime
 
 import requests
 from core.models import CustomUser
-from django import forms
+from django import forms, http
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
@@ -750,6 +751,12 @@ class ApiDoc(TemplateView):
 class WelcomeView(TemplateView):
     template_name = "index.html"
 
+    def dispatch(self, request, *args, **kwargs) -> HttpResponse:
+        #Calling config before the view loads to create a webconfig if it does not already exist
+        #This is only useful when the website is loaded for the very first time on a new database.
+        get_config()
+        return super().dispatch(request, *args, **kwargs)
+    
     def referal_user(self):
         if self.request.GET.get("referal"):
             self.request.session["referal"] = self.request.GET.get("referal")
