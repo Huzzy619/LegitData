@@ -42,7 +42,7 @@ from .tokens import account_activation_token
 
 # Create your views here.
 
-
+# CREATE USER API.... TO CREATE CUSTSOM-USER
 class UserCreate(APIView):
     """
     Creates the user.
